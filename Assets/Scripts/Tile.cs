@@ -4,10 +4,11 @@ using UnityEngine;
 
 public class Tile : MonoBehaviour
 {
+    public Board board;
     public GameObject piece;
     public List<int> pos;
     public bool is_set = false;
-    private Color basic_color;
+    public Color basic_color;
 
     // Start is called before the first frame update
     void Start()
@@ -29,9 +30,12 @@ public class Tile : MonoBehaviour
     {
         
     }
-
-    public Tile(List<int> pos)
+    private void OnMouseDown()
     {
-        this.pos = pos;
+        board.clear_highlights();
+        if (this.piece is not null)
+        {
+            this.piece.gameObject.GetComponent<Piece>().click_handler();
+        }
     }
 }
