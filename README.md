@@ -1,5 +1,5 @@
 # HexChess
-Chess but with hexagonal tiles. This game is inspired by **_Gliński's Hexagonal Chess_**:
+Chess but with **hexagonal tiles**. This game is inspired by **_Gliński's Hexagonal Chess_**:
 
 ![image](https://github.com/Treszyk/HexChess/assets/79578683/7075c058-f4ee-4aab-85a9-ff10f245e856)
 
