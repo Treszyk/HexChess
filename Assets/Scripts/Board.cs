@@ -5,7 +5,7 @@ using UnityEngine;
 public class Board : MonoBehaviour
 {
     public List<List<GameObject>> tiles;
-    
+    int a = 0;
     // Start is called before the first frame update
     void Start()
     {
