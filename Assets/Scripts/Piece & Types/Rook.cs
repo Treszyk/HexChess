@@ -33,11 +33,8 @@ public class Rook : Piece
             {
                 help_x--;
             }
-            if (help_x >= 0 && help_x < board.tiles[y].Count)
-            {
-                if (!legal_move_handler(y, help_x)) break;
-            }
-            else break;
+            if (!legal_move_handler(y, help_x))
+                break;
         }
         help_x = pos_x;
         for (int y = pos_y + 1; y < board.tiles.Count; y++)
@@ -46,11 +43,8 @@ public class Rook : Piece
             {
                 help_x++;
             }
-            if (help_x >= 0 && help_x < board.tiles[y].Count)
-            {
-                if (!legal_move_handler(y, help_x)) break;
-            }
-            else break;
+            if (!legal_move_handler(y, help_x))
+                break;
         }
         help_x = pos_x;
         for (int y = pos_y - 1; y >= 0; y--)
@@ -59,11 +53,8 @@ public class Rook : Piece
             {
                 help_x--;
             }
-            if (help_x >= 0 && help_x < board.tiles[y].Count)
-            {
-                if (!legal_move_handler(y, help_x)) break;
-            }
-            else break;
+            if (!legal_move_handler(y, help_x))
+                break;
         }
         help_x = pos_x;
         for (int y = pos_y - 1; y >= 0; y--)
@@ -72,11 +63,8 @@ public class Rook : Piece
             {
                 help_x++;
             }
-            if (help_x >= 0 && help_x < board.tiles[y].Count)
-            {
-                if (!legal_move_handler(y, help_x)) break;
-            }
-            else break;
+            if (!legal_move_handler(y, help_x))
+                break;
         }
     }
 

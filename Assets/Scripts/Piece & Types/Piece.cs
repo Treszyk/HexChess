@@ -28,6 +28,7 @@ public abstract class Piece : MonoBehaviour
     public abstract void returnLegalMoves(Tile tile);
     public bool legal_move_handler(int y, int x)
     {
+        if(y < 0 || y >= board.tiles.Count || x < 0 || x >= board.tiles[y].Count) return false;
         Tile move_tile = board.tiles[y][x].GetComponent<Tile>();
         if (move_tile.piece is null)
         {

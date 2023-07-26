@@ -22,40 +22,28 @@ public class Bishop : Piece
         for(int y = pos_y + 1; y < board.tiles.Count; y++)
         {
             help_x -= y <= board.tiles.Count / 2 ? 1 : 2;
-            if (help_x >= 0 && help_x < board.tiles[y].Count)
-            {
-                if (!legal_move_handler(y, help_x)) break;
-            }
+            if (!legal_move_handler(y, help_x)) break;
         }
         help_x = pos_x;
         //left-bottom moves
         for (int y = pos_y - 1; y >= 0; y--)
         {
             help_x -= y >= board.tiles.Count / 2 ? 1 : 2;
-            if (help_x >= 0 && help_x < board.tiles[y].Count)
-            {
-                if (!legal_move_handler(y, help_x)) break;
-            }
+            if (!legal_move_handler(y, help_x)) break;
         }
         help_x = pos_x;
         //top-right moves
         for(int y = pos_y + 1; y < board.tiles.Count; y++)
         {
             help_x += y <= board.tiles.Count / 2 ? 2 : 1;
-            if (help_x >= 0 && help_x < board.tiles[y].Count)
-            {
-                if (!legal_move_handler(y, help_x)) break;
-            }
+            if (!legal_move_handler(y, help_x)) break;
         }
         help_x = pos_x;
         //top-bottom moves
         for (int y = pos_y - 1; y >= 0; y--)
         {
             help_x += y < board.tiles.Count / 2 ? 1 : 2;
-            if (help_x >= 0 && help_x < board.tiles[y].Count)
-            {
-                if (!legal_move_handler(y, help_x)) break;
-            }
+            if (!legal_move_handler(y, help_x)) break;
         }
         help_x = pos_x;
         //xd
@@ -65,11 +53,7 @@ public class Bishop : Piece
             if (y == (board.tiles.Count / 2) + 1) help_x += 0;
             else help_x += y > board.tiles.Count / 2 ? -1 : 1;
 
-
-            if (help_x >= 0 && help_x < board.tiles[y].Count)
-            {
-                if (!legal_move_handler(y, help_x)) break;
-            }
+            if (!legal_move_handler(y, help_x)) break;
         }
         help_x = pos_x;
         for (int y = pos_y - 2; y >= 0; y -= 2)
@@ -77,12 +61,7 @@ public class Bishop : Piece
             Debug.Log(board.tiles.Count / 2);
             if (y == (board.tiles.Count / 2) - 1) help_x += 0;
             else help_x += y >= board.tiles.Count / 2 ? 1 : -1;
-
-
-            if (help_x >= 0 && help_x < board.tiles[y].Count)
-            {
-                if (!legal_move_handler(y, help_x)) break;
-            }
+            if (!legal_move_handler(y, help_x)) break;
         }
 
     }
