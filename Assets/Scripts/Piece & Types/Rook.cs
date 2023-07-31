@@ -10,7 +10,8 @@ public class Rook : Piece
     // Start is called before the first frame update
     void Start()
     {
-
+        this.piece_name = "rook";
+        set_sprite();
     }
     public override void returnLegalMoves(Tile tile)
     {

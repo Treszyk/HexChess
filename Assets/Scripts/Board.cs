@@ -1,27 +1,39 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
+
+
 
 public class Board : MonoBehaviour
 {
     public List<List<GameObject>> tiles;
     public List<List<int>> global_legal_moves;
-    public GameObject selected_piece;
+    public GameObject selected_tile;
+    public TextMeshProUGUI tmp;
     // Start is called before the first frame update
     void Start()
     {
+        QualitySettings.vSyncCount = 0;
+        //Application.targetFrameRate = 60;
         //Rook rook = new Rook("Black");
         //Tile tile = new Tile(rook,"b1");
         //tiles.Add(new List<Tile>() { new Tile(null, "a1"), tile, new Tile(null, "c1"), new Tile(new Rook("White"), "d1"), new Tile(null, "e1") });
         create_tiles();
         global_legal_moves = new List<List<int>>();
-        selected_piece = null;
+        selected_tile = null;
     }
 
+    public void move_piece(GameObject move_tile)
+    {
+        selected_tile.GetComponent<Tile>().piece.transform.parent = move_tile.transform;
+        selected_tile.GetComponent<Tile>().piece.GetComponent<Piece>().set_sprite();
+        move_tile.GetComponent<Tile>().piece = selected_tile.GetComponent<Tile>().piece;
+        selected_tile.GetComponent<Tile>().piece = null;
+    }
     // Update is called once per frame
     void Update()
     {
-
     }
 
     void create_tiles()

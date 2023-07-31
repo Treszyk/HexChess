@@ -12,18 +12,29 @@ public abstract class Piece : MonoBehaviour
     public color color;
     public Board board;
     public List<List<int>> legalMoves;
+    public string piece_name;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        legalMoves = new List<List<int>>();
     }
     public void click_handler()
     {
-        board.selected_piece = this.gameObject;
         legalMoves = new List<List<int>>();
 
         returnLegalMoves(transform.GetComponentInParent<Tile>());
+    }
+
+    public void set_sprite()
+    {
+        SpriteRenderer r = GetComponent<SpriteRenderer>();
+        string color_prefix = color == color.WHITE ? "w_" : "b_";
+        Sprite image = Resources.Load<Sprite>($"Sprites/{color_prefix}{piece_name}");
+        transform.localScale = new Vector3(0.45f, 0.45f, 0.45f);
+        r.sprite = image;
+        r.color = Color.white;
+        transform.localPosition = Vector3.zero;
     }
     public abstract void returnLegalMoves(Tile tile);
     public bool legal_move_handler(int y, int x)

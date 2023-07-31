@@ -32,10 +32,48 @@ public class Tile : MonoBehaviour
     }
     private void OnMouseDown()
     {
+        
         board.clear_highlights();
-        if (this.piece is not null)
+        
+        if(this.piece is not null)
         {
-            this.piece.gameObject.GetComponent<Piece>().click_handler();
+            if(board.selected_tile is null)
+            {
+                board.selected_tile = this.gameObject;
+                this.piece.gameObject.GetComponent<Piece>().click_handler();
+            } 
+            else if(board.selected_tile.GetComponentInChildren<Piece>().color == this.piece.GetComponent<Piece>().color)
+            {
+                board.selected_tile = this.gameObject;
+                this.piece.gameObject.GetComponent<Piece>().click_handler();
+            }
+            else
+            {
+                foreach (List<int> move_pos in board.selected_tile.GetComponent<Tile>().piece.GetComponent<Piece>().legalMoves)
+                {
+                    if (pos[0] == move_pos[0] && pos[1] == move_pos[1])
+                    {
+                        Destroy(this.piece.gameObject);
+                        board.move_piece(this.gameObject);
+                        break;
+                    }
+                }
+                board.selected_tile = null;
+            }
+
+
+        }
+        else if (this.piece is null && board.selected_tile is not null)
+        {
+            foreach (List<int> move_pos in board.selected_tile.GetComponent<Tile>().piece.GetComponent<Piece>().legalMoves)
+            {
+                if (pos[0] == move_pos[0] && pos[1] == move_pos[1])
+                {
+                    board.move_piece(this.gameObject);
+                    break;
+                }
+            }
+            board.selected_tile = null;
         }
     }
 }

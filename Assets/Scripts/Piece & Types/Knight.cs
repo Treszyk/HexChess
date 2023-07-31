@@ -9,7 +9,8 @@ public class Knight : Piece
     // Start is called before the first frame update
     void Start()
     {
-
+        this.piece_name = "knight";
+        set_sprite();
     }
 
     public override void returnLegalMoves(Tile tile)
@@ -47,25 +48,45 @@ public class Knight : Piece
             //DO IT IF THE PIECE IS BELOW OR AT THE MIDDLE ROW       
             if(pos_y <= board.tiles.Count/2)
             {    
-                //BOTTOM MOVES
+                //MOVES UNDER
                 legal_move_handler(pos_y - i, pos_x + offsets[i - 1][0]);
                 legal_move_handler(pos_y - i, pos_x + offsets[i - 1][1]);
-                //TOP MOVES
+                //MOVES ABOVE
                 if (pos_y == (board.tiles.Count / 2) - 2 && i == 3)
                 {
                     special_offset = 1; 
                 } else if (pos_y == (board.tiles.Count/2) - 1)
                 {
-                    if (i == 2)
-                        special_offset = 1;
-                    else if(i == 3)
-                        special_offset = 2;
+                    special_offset = i - 1;
                 } else if (pos_y == (board.tiles.Count/2))
                 {
                     special_offset = i;
                 }
                 legal_move_handler(pos_y + i, pos_x + Math.Abs(offsets[i - 1][0]) - special_offset);
                 legal_move_handler(pos_y + i, pos_x + (offsets[i - 1][1] * (-1)) - special_offset);
+            }
+            else if(pos_y > board.tiles.Count/2)
+            {
+                //MOVES ABOVE
+                legal_move_handler(pos_y + i, pos_x + offsets[i - 1][0]);
+                legal_move_handler(pos_y + i, pos_x + offsets[i - 1][1]);
+                //MOVES UNDER
+                if (pos_y == (board.tiles.Count / 2) + 2 && i == 3)
+                {
+                    special_offset = 1;
+                }
+                else if (pos_y == (board.tiles.Count / 2) + 1)
+                {
+                    special_offset = i - 1;
+                }
+                else if (pos_y == (board.tiles.Count / 2))
+                {
+                    special_offset = i;
+                }
+                legal_move_handler(pos_y - i, pos_x + Math.Abs(offsets[i - 1][0]) - special_offset);
+                legal_move_handler(pos_y - i, pos_x + (offsets[i - 1][1] * (-1)) - special_offset);
+
+
             }
             
 
