@@ -7,7 +7,7 @@ public class Tile : MonoBehaviour
     public Board board;
     public GameObject piece;
     public List<int> pos;
-    public bool is_set = false;
+    public bool is_start_pos = false;
     public Color basic_color;
 
     // Start is called before the first frame update
@@ -25,6 +25,10 @@ public class Tile : MonoBehaviour
 
     }
 
+    public bool contains_piece()
+    {
+        return piece is not null;
+    }
     // Update is called once per frame
     void Update()
     {

@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
+using UnityEditor;
 using UnityEngine;
 
 
@@ -36,6 +38,23 @@ public class Board : MonoBehaviour
     {
     }
 
+    public bool is_in_bounds(int y, int x )
+    {
+        if (y >= 0 && y < tiles.Count)
+        {
+            if (x >= 0 && x < tiles[y].Count)
+                return true;
+        }
+        return false;
+    }
+
+    public bool tile_contains_piece(int y, int x)
+    {
+        if(is_in_bounds(y, x))
+            return tiles[y][x].GetComponent<Tile>().contains_piece();
+        return false;
+    }
+
     void create_tiles()
     {
         tiles = new List<List<GameObject>>();
@@ -46,7 +65,6 @@ public class Board : MonoBehaviour
             {
                 tile.GetComponent<Tile>().pos = new List<int> { tiles.Count, tile_row.Count };
                 tile_row.Add(tile.gameObject);
-                tile.GetComponent<Tile>().is_set = true;
             }
             tiles.Add(tile_row);
         }
