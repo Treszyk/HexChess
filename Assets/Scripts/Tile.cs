@@ -9,6 +9,7 @@ public class Tile : MonoBehaviour
     public List<int> pos;
     public bool is_start_pos = false;
     public Color basic_color;
+    public bool promoting = false;
 
     // Start is called before the first frame update
     void Start()
@@ -59,6 +60,7 @@ public class Tile : MonoBehaviour
                     {
                         Destroy(this.piece.gameObject);
                         board.move_piece(this.gameObject);
+
                         break;
                     }
                 }

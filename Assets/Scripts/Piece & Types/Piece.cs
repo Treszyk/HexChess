@@ -5,7 +5,7 @@ using UnityEngine;
 public enum color
 {
     WHITE,
-    BLACK
+    BLACK,
 }
 public abstract class Piece : MonoBehaviour
 {
@@ -17,7 +17,7 @@ public abstract class Piece : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        legalMoves = new List<List<int>>();
+        legalMoves = new List<List<int>>();  
     }
     public void click_handler()
     {

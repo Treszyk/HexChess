@@ -6,10 +6,11 @@ using UnityEngine;
 
 public class Pawn : Piece
 {
-
+    public bool moved2spaces = false;
     // Start is called before the first frame update
     void Start()
     {
+        
         this.piece_name = "pawn";
         set_sprite();
         //GameObject test = new GameObject("rook");

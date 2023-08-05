@@ -227,6 +227,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!61 &9023797
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -336,6 +337,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &36019288
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -536,6 +538,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &47660624
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -697,6 +700,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &55706559
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -858,6 +862,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &123979141
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1019,6 +1024,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &131692669
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1180,6 +1186,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &180303818
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1394,6 +1401,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &238037086
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1503,6 +1511,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &247874206
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1681,6 +1690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected_tile: {fileID: 0}
   tmp: {fileID: 0}
+  pieces: []
 --- !u!4 &276942581
 Transform:
   m_ObjectHideFlags: 0
@@ -1688,8 +1698,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 276942579}
-  m_LocalRotation: {x: 0, y: 0, z: 0.2588191, w: 0.9659258}
-  m_LocalPosition: {x: -2.24, y: -4.64, z: 0.016821023}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.25, y: -2.86, z: 0.016821023}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1706,7 +1716,7 @@ Transform:
   - {fileID: 1507391959}
   m_Father: {fileID: 0}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 30}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &293210421
 GameObject:
   m_ObjectHideFlags: 0
@@ -1759,6 +1769,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &293210424
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1920,6 +1931,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!212 &354894245
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2120,6 +2132,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &432922461
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2281,6 +2294,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &436543867
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2494,6 +2508,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!61 &486064101
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2603,6 +2618,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &488308074
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2764,6 +2780,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &492142292
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2966,6 +2983,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &505324274
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3127,6 +3145,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &515035248
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3372,6 +3391,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &557287894
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3533,6 +3553,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &558765722
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3746,6 +3767,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!60 &566194021
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -3830,6 +3852,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &574906283
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4043,6 +4066,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!61 &590331953
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4204,6 +4228,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!61 &591964825
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4309,6 +4334,7 @@ MonoBehaviour:
   color: 0
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &607128232
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4414,6 +4440,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &632074403
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4575,6 +4602,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &635865156
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4736,6 +4764,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &664150015
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4882,6 +4911,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!212 &665901322
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5043,6 +5073,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!212 &671442113
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5272,6 +5303,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &672808346
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5433,6 +5465,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &690701394
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5538,6 +5571,7 @@ MonoBehaviour:
   color: 0
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &696895428
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5693,6 +5727,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!60 &708503447
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5827,6 +5862,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!60 &776916578
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -5963,6 +5999,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &783938369
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6125,6 +6162,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!61 &797615709
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6230,6 +6268,7 @@ MonoBehaviour:
   color: 0
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &805688114
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6387,6 +6426,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &805961523
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6548,6 +6588,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!61 &823051059
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -6658,6 +6699,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &871569531
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6852,6 +6894,7 @@ MonoBehaviour:
   color: 0
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &907614218
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6940,6 +6983,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!212 &932517408
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7091,6 +7135,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &950205131
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7252,6 +7297,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &960536911
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7465,6 +7511,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &974287653
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -7570,6 +7617,7 @@ MonoBehaviour:
   color: 0
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &994303099
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7670,6 +7718,7 @@ MonoBehaviour:
   color: 0
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &996541805
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -7825,6 +7874,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!60 &1005788873
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -7908,6 +7958,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1017805439
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8117,6 +8168,7 @@ MonoBehaviour:
   color: 1
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!1 &1056923881
 GameObject:
   m_ObjectHideFlags: 0
@@ -8169,6 +8221,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1056923884
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8382,6 +8435,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &1059147551
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8491,6 +8545,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1062688204
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -8742,6 +8797,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &1109273929
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -8836,6 +8892,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!212 &1124007854
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9008,6 +9065,7 @@ MonoBehaviour:
   color: 0
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &1138784986
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9112,6 +9170,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1144508503
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9273,6 +9332,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1158759542
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9486,6 +9546,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!61 &1159797678
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -9621,6 +9682,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!212 &1178159759
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9797,6 +9859,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!212 &1188293921
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -9954,6 +10017,7 @@ MonoBehaviour:
   color: 1
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &1236036644
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10059,6 +10123,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1247108803
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10220,6 +10285,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1270434507
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10381,6 +10447,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1271774253
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10538,6 +10605,7 @@ MonoBehaviour:
   color: 1
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &1282320878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -10694,6 +10762,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &1314928134
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -10803,6 +10872,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1333982804
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11016,6 +11086,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &1347878731
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11125,6 +11196,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1382849603
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11286,6 +11358,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1389703357
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11531,6 +11604,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &1417363337
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -11600,7 +11674,7 @@ GameObject:
   - component: {fileID: 1420978358}
   - component: {fileID: 1420978357}
   m_Layer: 0
-  m_Name: Pawn (1)
+  m_Name: pawn2xddddd
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -11636,6 +11710,7 @@ MonoBehaviour:
   color: 0
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &1420978358
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11740,6 +11815,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1461093676
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11897,6 +11973,7 @@ MonoBehaviour:
   color: 1
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &1464341669
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12001,6 +12078,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1487057630
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12158,6 +12236,7 @@ MonoBehaviour:
   color: 1
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &1502732886
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12262,6 +12341,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1506561040
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12460,6 +12540,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1525461816
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12661,6 +12742,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1541473146
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12822,6 +12904,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1556600255
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12979,6 +13062,7 @@ MonoBehaviour:
   color: 1
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &1561623402
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13177,6 +13261,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!61 &1609193221
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13338,6 +13423,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &1615855330
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -13447,6 +13533,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1616458198
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13604,6 +13691,7 @@ MonoBehaviour:
   color: 1
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &1619605886
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13693,6 +13781,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!212 &1671889483
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -13922,6 +14011,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &1697665993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14027,6 +14117,7 @@ MonoBehaviour:
   color: 1
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &1715393152
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14131,6 +14222,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1716631598
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14345,6 +14437,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &1731691955
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -14455,6 +14548,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1732036935
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14612,6 +14706,7 @@ MonoBehaviour:
   color: 0
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &1734284904
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14716,6 +14811,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1750917608
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14930,6 +15026,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &1798686730
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -15039,6 +15136,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1814168888
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15226,6 +15324,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!212 &1836532190
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15376,6 +15475,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1841931162
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15497,7 +15597,7 @@ GameObject:
   - component: {fileID: 1886597437}
   - component: {fileID: 1886597436}
   m_Layer: 0
-  m_Name: Pawn (1)
+  m_Name: xdpawn
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -15533,6 +15633,7 @@ MonoBehaviour:
   color: 0
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &1886597437
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15637,6 +15738,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1914623583
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15798,6 +15900,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1928234683
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16011,6 +16114,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!61 &1941788779
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16120,6 +16224,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &1958343021
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16333,6 +16438,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 1
 --- !u!61 &1963422240
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -16438,6 +16544,7 @@ MonoBehaviour:
   color: 1
   board: {fileID: 276942580}
   piece_name: 
+  moved2spaces: 0
 --- !u!212 &2004081871
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16543,6 +16650,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 1
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &2100039757
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16704,6 +16812,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &2109883339
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -16865,6 +16974,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &2133173585
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -17026,6 +17136,7 @@ MonoBehaviour:
   pos: 
   is_start_pos: 0
   basic_color: {r: 0, g: 0, b: 0, a: 0}
+  promoting: 0
 --- !u!212 &2142344638
 SpriteRenderer:
   m_ObjectHideFlags: 0
