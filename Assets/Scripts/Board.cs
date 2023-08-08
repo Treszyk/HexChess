@@ -15,6 +15,7 @@ public class Board : MonoBehaviour
     public TextMeshProUGUI tmp;
     public List<Piece> pieces;
     int turn = (int)color.WHITE;
+    public bool is_highlighted = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -41,6 +42,7 @@ public class Board : MonoBehaviour
             List<GameObject> tile_row = new List<GameObject>();
             foreach (GameObject tile in row)
             {
+                tile.GetComponent<Tile>().en_passante = false;
                 if(tile.GetComponent<Tile>().piece != null)
                     pieces.Add(tile.GetComponent<Tile>().piece.GetComponent<Piece>());
             }
@@ -90,7 +92,29 @@ public class Board : MonoBehaviour
         {
             _move_tile.piece = selected_tile.GetComponent<Tile>().piece;
         }
+        Debug.Log(move_tile.GetComponent<SpriteRenderer>().color);
+        if (move_tile.GetComponent<Tile>().en_passante)
+        {
+            if (piece_name == "pawn")
+            {
+                GameObject pawn = _selected_tile.piece.GetComponent<Pawn>().en_passante_tile.GetComponent<Tile>().piece;
+                Debug.Log(pawn);
+                Destroy(pawn);
+                _selected_tile.piece.GetComponent<Piece>().GetComponent<Pawn>().en_passante_tile.GetComponent<Tile>().piece = null;
+                
+            }
+            move_tile.GetComponent<Tile>().en_passante = false;
+
+        }
         _selected_tile.piece = null;
+        set_pieces();
+        foreach (Piece piece in pieces)
+        {
+            if (piece.piece_name == "pawn")
+                piece.transform.parent.GetComponent<Tile>().piece.GetComponent<Pawn>().en_passante_tile = null;
+        }
+        
+        Debug.Log(_selected_tile.piece);
 
         set_pieces();
         this.turn *= -1;

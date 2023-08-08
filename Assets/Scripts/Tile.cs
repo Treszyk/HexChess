@@ -10,6 +10,7 @@ public class Tile : MonoBehaviour
     public bool is_start_pos = false;
     public Color basic_color;
     public bool promoting = false;
+    public bool en_passante = false;
 
     // Start is called before the first frame update
     void Start()
