@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Mathematics;
+using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
 
@@ -10,7 +11,6 @@ using UnityEngine;
 public class Board : MonoBehaviour
 {
     public List<List<GameObject>> tiles;
-    public List<List<int>> global_legal_moves;
     public GameObject selected_tile;
     public TextMeshProUGUI tmp;
     public List<Piece> pieces;
@@ -25,7 +25,6 @@ public class Board : MonoBehaviour
         //Tile tile = new Tile(rook,"b1");
         //tiles.Add(new List<Tile>() { new Tile(null, "a1"), tile, new Tile(null, "c1"), new Tile(new Rook("White"), "d1"), new Tile(null, "e1") });
         create_tiles();
-        global_legal_moves = new List<List<int>>();
         selected_tile = null;
         StartCoroutine(set_pieces_timer());
     }
@@ -124,6 +123,14 @@ public class Board : MonoBehaviour
     {
     }
 
+    public void highlight_moves()
+    {
+        foreach(List<int> pos in selected_tile.GetComponent<Tile>().piece.GetComponent<Piece>().legalMoves)
+        {
+            tiles[pos[0]][pos[1]].GetComponent<Tile>().GetComponent<SpriteRenderer>().color = Color.cyan;
+        }
+    }
+
     public bool is_in_bounds(int y, int x )
     {
         if (y >= 0 && y < tiles.Count)
@@ -141,7 +148,7 @@ public class Board : MonoBehaviour
         return false;
     }
 
-    void create_tiles()
+    public void create_tiles()
     {
         tiles = new List<List<GameObject>>();
         foreach (Transform row in this.transform)
@@ -167,4 +174,28 @@ public class Board : MonoBehaviour
             }
         }
     }
+
+    public List<List<int>> return_legal_moves_by_color(color color)
+    {
+        List<List<int>> legal_moves = new List<List<int>>();
+        foreach(Piece piece in pieces)
+        {
+            if (piece.color == color)
+            {
+                piece.legalMoves = new List<List<int>>();
+                piece.returnLegalMoves(piece.transform.parent.GetComponent<Tile>());
+                foreach(List<int> pos in piece.legalMoves)
+                {
+                    legal_moves.Add(pos);
+                }
+            }
+        }
+        return legal_moves;
+    }
+
+    public Board clone()
+    {
+        return (Board)this.MemberwiseClone();
+    }
+
 }

@@ -12,7 +12,6 @@ public class Pawn : Piece
     // Start is called before the first frame update
     void Start()
     {
-        
         this.piece_name = "pawn";
         set_sprite();
         //GameObject test = new GameObject("rook");
@@ -78,7 +77,7 @@ public class Pawn : Piece
                 if (temp_piece.piece_name == "pawn" && temp_piece.color != this.color)
                     if (temp_piece.GetComponent<Pawn>().moved2spaces)
                     {
-                        legal_move_handler(pos_y + 1, pos_x + 1 + offset_right_w, (int)Highlight.PURPLE);
+                        legal_move_handler(pos_y + 1, pos_x + 1 + offset_right_w);
                         en_passante_tile = temp_piece.transform.parent.transform.gameObject;
                         board.tiles[pos_y + 1][pos_x + 1 + offset_right_w].GetComponent<Tile>().en_passante = true;
                     }
@@ -90,7 +89,7 @@ public class Pawn : Piece
                 if (temp_piece.piece_name == "pawn" && temp_piece.color != this.color)
                     if (temp_piece.GetComponent<Pawn>().moved2spaces)
                     {
-                        legal_move_handler(pos_y, pos_x - 1, (int)Highlight.PURPLE);
+                        legal_move_handler(pos_y, pos_x - 1);
                         en_passante_tile = temp_piece.transform.parent.transform.gameObject;
                         board.tiles[pos_y][pos_x - 1].GetComponent<Tile>().en_passante = true;
                     }
@@ -116,7 +115,7 @@ public class Pawn : Piece
                 if (temp_piece.piece_name == "pawn")
                     if (temp_piece.GetComponent<Pawn>().moved2spaces)
                     {
-                        legal_move_handler(pos_y, pos_x + 1, (int)Highlight.PURPLE);
+                        legal_move_handler(pos_y, pos_x + 1);
                         en_passante_tile = temp_piece.transform.parent.transform.gameObject;
                         board.tiles[pos_y][pos_x + 1].GetComponent<Tile>().en_passante = true;
                     }
@@ -127,7 +126,7 @@ public class Pawn : Piece
                 if (temp_piece.piece_name == "pawn")
                     if (temp_piece.GetComponent<Pawn>().moved2spaces)
                     {
-                        legal_move_handler(pos_y - 1, pos_x - offset_right_b, (int)Highlight.PURPLE);
+                        legal_move_handler(pos_y - 1, pos_x - offset_right_b);
                         en_passante_tile = temp_piece.transform.parent.transform.gameObject;
                         board.tiles[pos_y - 1][pos_x - offset_right_b].GetComponent<Tile>().en_passante = true;
                     }

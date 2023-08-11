@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class Rook : Piece
 {
- 
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +66,7 @@ public class Rook : Piece
             if (!legal_move_handler(y, help_x))
                 break;
         }
+
     }
 
     // Update is called once per frame

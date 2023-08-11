@@ -27,8 +27,8 @@ public abstract class Piece : MonoBehaviour
     public void click_handler()
     {
         legalMoves = new List<List<int>>();
-
         returnLegalMoves(transform.GetComponentInParent<Tile>());
+        board.highlight_moves();
     }
 
     public void set_sprite()
@@ -42,24 +42,18 @@ public abstract class Piece : MonoBehaviour
         transform.localPosition = Vector3.zero;
     }
     public abstract void returnLegalMoves(Tile tile);
-    public bool legal_move_handler(int y, int x, int highlight_c = (int)Highlight.CYAN)
+    public bool legal_move_handler(int y, int x)
     {
-        Color highlight;
-        if (highlight_c == (int)Highlight.CYAN)
-            highlight = Color.cyan; 
-        else 
-            highlight = Color.magenta;
-
         if(y < 0 || y >= board.tiles.Count || x < 0 || x >= board.tiles[y].Count) return false;
         Tile move_tile = board.tiles[y][x].GetComponent<Tile>();
         if (move_tile.piece is null)
         {
-            move_tile.GetComponent<SpriteRenderer>().color = highlight;
+            //move_tile.GetComponent<SpriteRenderer>().color = highlight;
             legalMoves.Add(new List<int> { y, x });
         }
         else if (move_tile.piece.GetComponent<Piece>().color != this.color)
         {
-            move_tile.GetComponent<SpriteRenderer>().color = highlight;
+            //move_tile.GetComponent<SpriteRenderer>().color = highlight;
             legalMoves.Add(new List<int> { y, x });
             return false;
         }
