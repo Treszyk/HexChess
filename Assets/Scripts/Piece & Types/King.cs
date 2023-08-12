@@ -1,9 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class King : Piece
 {
@@ -16,11 +16,12 @@ public class King : Piece
     }
     public override void returnLegalMoves(Tile tile)
     {
+        legalMoves.Clear();
+        int pos_x = tile.pos[1];
+        int pos_y = tile.pos[0];
+        int help_x = pos_x;
         {
-            legalMoves.Clear();
-            int pos_x = tile.pos[1];
-            int pos_y = tile.pos[0];
-            int help_x = pos_x;
+
 
             legal_move_handler(pos_y, pos_x - 1);
             legal_move_handler(pos_y, pos_x + 1);
@@ -76,26 +77,37 @@ public class King : Piece
             legal_move_handler(pos_y - 2, help_x);
         }
         //ruch
-        Board boarde = Instantiate(this.board);
+        Vector3 position = new Vector3(200,200,200);
+       
+        List<List<int>> illegal_moves = new List<List<int>>();
         
-        boarde.create_tiles();
-        //dziala
-        Destroy(boarde.tiles[0][1].GetComponent<Tile>().piece);
-
-        boarde.tiles[0][5].GetComponent<Tile>().en_passante = true;
-        Debug.Log(boarde.tiles[0][5].GetComponent<Tile>().en_passante);
-        Debug.Log(this.board.tiles[0][5].GetComponent<Tile>().en_passante);
         foreach (List<int> pos in legalMoves)
         {
-            
-
-            //board_copy.move_piece(board_copy.tiles[pos[0]][pos[1]]);
-            //List<List<int>> enemy_moves = board_copy.return_legal_moves_by_color(color == color.WHITE ? color.BLACK : color.WHITE);
-
+            //temporary fix, try to find out how to reset the king's position
+            Board temp_board = Instantiate(this.board, position, Quaternion.identity);
+            Debug.Log(temp_board.selected_tile);
+            temp_board.create_tiles();
+            temp_board.update_tiles();
+            Piece king = temp_board.king_w;
+            temp_board.move_piece(temp_board.tiles[pos[0]][pos[1]]);
+            temp_board.selected_tile = temp_board.tiles[pos[0]][pos[1]];
+            //if (temp_board.tiles[pos[0]][pos[1]].GetComponent<Tile>().piece.GetComponent<Piece>() == king)
+            //{
+            //    Debug.Log($"{king.transform.parent.GetComponent<Tile>().pos[0]} {king.transform.parent.GetComponent<Tile>().pos[1]}");
+            //}
+            List<List<int>> enemy_moves = temp_board.return_legal_moves_by_color(color == color.WHITE ? color.BLACK : color.WHITE);
+            if (temp_board.is_king_in_check(enemy_moves, this.color))
+            {
+                illegal_moves.Add(pos);
+            }
+            Destroy(temp_board.gameObject);
         }
+        foreach(List<int> i in illegal_moves)
+        {
+            legalMoves.Remove(i);
+        }
+        
     }
-
-
     // Update is called once per frame
     void Update()
     {

@@ -14,6 +14,8 @@ public class Board : MonoBehaviour
     public GameObject selected_tile;
     public TextMeshProUGUI tmp;
     public List<Piece> pieces;
+    public Piece king_w;
+    public Piece king_b;
     int turn = (int)color.WHITE;
     public bool is_highlighted = false;
     // Start is called before the first frame update
@@ -28,10 +30,21 @@ public class Board : MonoBehaviour
         selected_tile = null;
         StartCoroutine(set_pieces_timer());
     }
-    IEnumerator set_pieces_timer()
+    public IEnumerator set_pieces_timer()
     {
         yield return new WaitForSeconds(0.0000001f);
         set_pieces();
+    }
+
+
+
+    public void update_tiles()
+    {
+        foreach(List<GameObject> row in tiles)
+        {
+            foreach (GameObject tile in row)
+                tile.GetComponent<Tile>().update_tile();
+        }
     }
     public void set_pieces()
     {
@@ -91,7 +104,7 @@ public class Board : MonoBehaviour
         {
             _move_tile.piece = selected_tile.GetComponent<Tile>().piece;
         }
-        Debug.Log(move_tile.GetComponent<SpriteRenderer>().color);
+        //Debug.Log(move_tile.GetComponent<SpriteRenderer>().color);
         if (move_tile.GetComponent<Tile>().en_passante)
         {
             if (piece_name == "pawn")
@@ -113,7 +126,7 @@ public class Board : MonoBehaviour
                 piece.transform.parent.GetComponent<Tile>().piece.GetComponent<Pawn>().en_passante_tile = null;
         }
         
-        Debug.Log(_selected_tile.piece);
+        //Debug.Log(_selected_tile.piece);
 
         set_pieces();
         this.turn *= -1;
@@ -175,7 +188,7 @@ public class Board : MonoBehaviour
         }
     }
 
-    public List<List<int>> return_legal_moves_by_color(color color)
+    public List<List<int>> return_legal_moves_by_color(color color, Piece caller = null)
     {
         List<List<int>> legal_moves = new List<List<int>>();
         foreach(Piece piece in pieces)
@@ -191,6 +204,24 @@ public class Board : MonoBehaviour
             }
         }
         return legal_moves;
+    }
+
+    public bool my_contains(List<List<int>> enemy_moves, Piece king)
+    {
+        List<int> king_pos = king.transform.parent.GetComponent<Tile>().pos;
+        foreach(List<int> enemy_move in enemy_moves)
+        {
+            if (enemy_move[0] == king_pos[0] && enemy_move[1] == king_pos[1])
+                return true;
+        }
+        return false;
+    }
+    public bool is_king_in_check(List<List<int>> enemy_moves, color king_color)
+    {
+        if (king_color == color.WHITE)
+            return my_contains(enemy_moves, king_w);
+        else
+            return my_contains(enemy_moves, king_b);
     }
 
     public Board clone()

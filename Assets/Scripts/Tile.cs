@@ -15,6 +15,11 @@ public class Tile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        update_tile();
+    }
+
+    public void update_tile()
+    {
         basic_color = GetComponent<SpriteRenderer>().color;
         if (transform.childCount > 0)
         {
@@ -24,7 +29,6 @@ public class Tile : MonoBehaviour
         {
             piece = null;
         }
-
     }
 
     public bool contains_piece()
