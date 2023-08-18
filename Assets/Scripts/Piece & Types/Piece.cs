@@ -4,8 +4,8 @@ using UnityEngine;
 
 public enum color
 {
-    WHITE,
-    BLACK,
+    WHITE = -1,
+    BLACK = 1,
 }
 public enum Highlight
 {
@@ -38,7 +38,7 @@ public abstract class Piece : MonoBehaviour
         int pos_y = transform.parent.GetComponent<Tile>().pos[0];
         Vector3 position = new Vector3(200, 200, 200);
         Board temp_board = Instantiate(this.board, position, Quaternion.identity);
-        Debug.Log(temp_board.selected_tile);
+        //Debug.Log(temp_board.selected_tile);
         temp_board.create_tiles();
         temp_board.update_tiles();
         Piece king = temp_board.king_w;
@@ -46,7 +46,7 @@ public abstract class Piece : MonoBehaviour
 
         foreach (List<int> pos in legalMoves)
         {
-            temp_board.move_piece(temp_board.tiles[pos[0]][pos[1]]);
+            temp_board.move_piece(temp_board.tiles[pos[0]][pos[1]], true);
             temp_board.selected_tile = temp_board.tiles[pos[0]][pos[1]];
             //if (temp_board.tiles[pos[0]][pos[1]].GetComponent<Tile>().piece.GetComponent<Piece>() == king)
             //{
@@ -57,7 +57,7 @@ public abstract class Piece : MonoBehaviour
             {
                 illegal_moves.Add(pos);
             }
-            temp_board.move_piece(temp_board.tiles[pos_y][pos_x]);
+            temp_board.move_piece(temp_board.tiles[pos_y][pos_x], true);
             temp_board.selected_tile = temp_board.tiles[pos_y][pos_x];
             temp_board.update_tiles();
         }

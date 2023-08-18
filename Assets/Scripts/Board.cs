@@ -10,13 +10,15 @@ using UnityEngine;
 
 public class Board : MonoBehaviour
 {
+    public GameObject promoteGUI;
+    public Main main;
     public List<List<GameObject>> tiles;
     public GameObject selected_tile;
+    public GameObject promoting_pawn_tile;
     public TextMeshProUGUI tmp;
     public List<Piece> pieces;
     public Piece king_w;
     public Piece king_b;
-    int turn = (int)color.WHITE;
     public bool is_highlighted = false;
     // Start is called before the first frame update
     void Start()
@@ -36,7 +38,18 @@ public class Board : MonoBehaviour
         set_pieces();
     }
 
-
+    IEnumerator Promote(GameObject promoteGUI)
+    {
+        while (promoteGUI.GetComponent<PromoteGUI>().chosen_piece is null)
+        {
+            Debug.Log(promoteGUI.GetComponent<PromoteGUI>().chosen_piece);
+            yield return null;
+        }
+    }
+    void set_chosen_piece()
+    {
+        Debug.Log("XDDD");
+    }
 
     public void update_tiles()
     {
@@ -56,11 +69,15 @@ public class Board : MonoBehaviour
             {
                 tile.GetComponent<Tile>().en_passante = false;
                 if(tile.GetComponent<Tile>().piece != null)
-                    pieces.Add(tile.GetComponent<Tile>().piece.GetComponent<Piece>());
+                {
+                    tile.GetComponent<Tile>().piece.GetComponent<Piece>().board = this;
+                    pieces.Add(tile.GetComponent<Tile>().piece.GetComponent<Piece>());    
+                }
+                    
             }
         }
     }
-    public void move_piece(GameObject move_tile)
+    public void move_piece(GameObject move_tile, bool is_copy = false)
     {
         bool is_pawn = false;
 
@@ -86,19 +103,28 @@ public class Board : MonoBehaviour
         _selected_tile.piece.transform.parent = move_tile.transform;
         _selected_tile.piece.GetComponent<Piece>().set_sprite();
         //check if pawn is moving into the promoting hex in current move
-        if (move_tile.GetComponent<Tile>().promoting && is_pawn)
+        if (move_tile.GetComponent<Tile>().promoting && is_pawn && !is_copy)
         {
-            GameObject promoting_piece = new GameObject("rook");
-            promoting_piece.AddComponent<Rook>();
-            promoting_piece.AddComponent<SpriteRenderer>();
+            promoteGUI.GetComponent<PromoteGUI>().set_promoting_pieces_color((color)main.turn);
+            promoteGUI.SetActive(true);
+            promoteGUI.GetComponent<PromoteGUI>().is_choosing = true;
+            promoting_pawn_tile = move_tile;
+            //Promote(promoteGUI);
+            //Destroy(promoteGUI);
+            //Debug.Log(promoteGUI.GetComponent<PromoteGUI>().chosen_piece);
+            //Debug.Log("IDZIE DALEJ");
 
-            _move_tile.piece = promoting_piece;   
+            //GameObject promoting_piece = new GameObject("rook");
+            //promoting_piece.AddComponent<Rook>();
+            //promoting_piece.AddComponent<SpriteRenderer>();
 
-            promoting_piece.transform.parent = _move_tile.transform;
-            promoting_piece.GetComponent<Piece>().board = this;
-            promoting_piece.GetComponent<Piece>().color = _selected_tile.GetComponent<Tile>().piece.GetComponent<Piece>().color;
+            //_move_tile.piece = promoting_piece;   
 
-            _move_tile.piece.GetComponent <Piece>().set_sprite();
+            //promoting_piece.transform.parent = _move_tile.transform;
+            //promoting_piece.GetComponent<Piece>().board = this;
+            //promoting_piece.GetComponent<Piece>().color = _selected_tile.GetComponent<Tile>().piece.GetComponent<Piece>().color;
+
+            //_move_tile.piece.GetComponent <Piece>().set_sprite();
             Destroy(selected_tile.GetComponent<Tile>().piece);
         } else
         {
@@ -129,7 +155,8 @@ public class Board : MonoBehaviour
         //Debug.Log(_selected_tile.piece);
 
         set_pieces();
-        this.turn *= -1;
+        if (promoteGUI.GetComponent<PromoteGUI>().is_choosing == false)
+            main.turn *= -1;
     }
     // Update is called once per frame
     void Update()
