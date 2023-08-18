@@ -21,10 +21,12 @@ public class Queen : Piece
         int help_x = pos_x;
 
         Rook rook = gameObject.AddComponent<Rook>();
+        rook.color = color;
         rook.board = this.board;
         rook.legalMoves = new List<List<int>>();
         rook.returnLegalMoves(tile);
         Bishop bishop = gameObject.AddComponent<Bishop>();
+        bishop.color = color;
         bishop.board = this.board;
         bishop.legalMoves = new List<List<int>>();
         bishop.returnLegalMoves(tile);

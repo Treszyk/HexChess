@@ -17,7 +17,7 @@ public class Tile : MonoBehaviour
     {
         update_tile();
     }
-
+    
     public void update_tile()
     {
         basic_color = GetComponent<SpriteRenderer>().color;
@@ -42,11 +42,12 @@ public class Tile : MonoBehaviour
     }
     private void OnMouseDown()
     {
-        
         board.clear_highlights();
         
         if(this.piece is not null)
         {
+            if (((int)piece.GetComponent<Piece>().color != board.main.turn && board.selected_tile is null) || board.promoteGUI.GetComponent<PromoteGUI>().is_choosing == true)
+                return;
             if(board.selected_tile is null)
             {
                 board.selected_tile = this.gameObject;
@@ -59,6 +60,7 @@ public class Tile : MonoBehaviour
             }
             else
             {
+                
                 foreach (List<int> move_pos in board.selected_tile.GetComponent<Tile>().piece.GetComponent<Piece>().legalMoves)
                 {
                     if (pos[0] == move_pos[0] && pos[1] == move_pos[1])
